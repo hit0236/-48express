@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>48express | أحدث الغادجيتس والعروض</title>
+<meta name="description" content="أفضل منتجات AliExpress المختارة بعناية — أدوات ذكية، غادجيتس، وحلول منزلية. اطلب مباشرة أو انضم لقناة التيليجرام لعروض يومية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E13;
+    --bg-elev:#12161D;
+    --card:#171C24;
+    --card-border:#232935;
+    --text:#F2F1EC;
+    --text-dim:#9198A6;
+    --amber:#FFB020;
+    --amber-dim:#8A5E12;
+    --telegram:#2AABEE;
+    --success:#3ECF8E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Tajawal', sans-serif;
+    line-height:1.5;
+    min-height:100vh;
+  }
+  h1,h2,h3,.brand{font-family:'Cairo', sans-serif;}
+
+  /* Sticky Telegram bar */
+  .telegram-bar{
+    position:sticky; top:0; z-index:100;
+    background:linear-gradient(90deg, var(--telegram), #1C8AC7);
+    padding:10px 16px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    text-align:center;
+  }
+  .telegram-bar a{
+    color:#fff; text-decoration:none; font-weight:700; font-size:14.5px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .telegram-bar svg{width:20px; height:20px; flex-shrink:0;}
+
+  /* Header / Hero */
+  header{
+    padding:44px 20px 28px;
+    text-align:center;
+    background:radial-gradient(ellipse at top, rgba(255,176,32,0.08), transparent 60%);
+    border-bottom:1px solid var(--card-border);
+  }
+  .brand{
+    font-size:28px; font-weight:900; letter-spacing:0.5px;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .brand span{color:var(--amber);}
+  header p.tagline{
+    color:var(--text-dim); font-size:15px; margin-top:10px;
+    max-width:420px; margin-inline:auto;
+  }
+  .count-pill{
+    display:inline-block; margin-top:16px; padding:6px 16px;
+    background:var(--card); border:1px solid var(--card-border);
+    border-radius:999px; font-size:13px; color:var(--amber); font-weight:700;
+  }
+
+  /* Category filter chips */
+  .filters{
+    display:flex; gap:8px; overflow-x:auto; padding:16px 20px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .filters::-webkit-scrollbar{display:none;}
+  .chip{
+    flex-shrink:0; padding:8px 16px; border-radius:999px;
+    background:var(--card); border:1px solid var(--card-border);
+    color:var(--text-dim); font-size:13.5px; font-weight:500;
+    cursor:pointer; transition:all .15s ease; white-space:nowrap;
+    font-family:'Tajawal', sans-serif;
+  }
+  .chip.active{background:var(--amber); color:#181203; border-color:var(--amber); font-weight:700;}
+
+  /* Grid */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    padding:8px 16px 40px;
+    max-width:1100px;
+    margin-inline:auto;
+  }
+  @media(min-width:640px){ .grid{grid-template-columns:repeat(3, 1fr);} }
+  @media(min-width:960px){ .grid{grid-template-columns:repeat(4, 1fr);} }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .card:hover{transform:translateY(-3px); border-color:var(--amber-dim);}
+
+  .thumb{
+    aspect-ratio:1/1; width:100%;
+    background:#1D2330;
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .thumb .ph{color:#454E5F; font-size:12px; text-align:center; padding:10px;}
+  .tag{
+    position:absolute; top:8px; right:8px;
+    background:rgba(11,14,19,0.75); backdrop-filter:blur(4px);
+    color:var(--amber); font-size:10.5px; font-weight:700;
+    padding:3px 9px; border-radius:999px; border:1px solid rgba(255,176,32,0.3);
+  }
+
+  .info{padding:10px 12px 12px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .info h3{
+    font-size:13.5px; font-weight:500; font-family:'Tajawal',sans-serif;
+    color:var(--text); line-height:1.4;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+    overflow:hidden; min-height:38px;
+  }
+  .buy-btn{
+    margin-top:auto;
+    display:block; text-align:center;
+    background:var(--amber); color:#181203;
+    font-weight:700; font-size:13px;
+    padding:9px 10px; border-radius:8px;
+    text-decoration:none;
+  }
+  .buy-btn:active{opacity:0.85;}
+
+  footer{
+    text-align:center; padding:30px 20px 50px;
+    color:var(--text-dim); font-size:12.5px;
+    border-top:1px solid var(--card-border);
+  }
+  footer a{color:var(--telegram); text-decoration:none; font-weight:700;}
+
+  .empty-state{
+    text-align:center; color:var(--text-dim); padding:60px 20px; grid-column:1/-1;
+  }
+</style>
+</head>
+<body>
+
+  <div class="telegram-bar">
+    <a href="https://t.me/+fS1aICLBv_4zMTQ8" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3c-.3-.2-.7-.3-1.3-.1L2.8 10.9c-.7.3-.7.8-.1 1l4.6 1.4 1.8 5.5c.1.4.4.6.7.6.2 0 .4-.1.6-.3l2.6-2.5 4.9 3.6c.3.2.6.3.9.3.6 0 1-.4 1.1-1L22 5.5c.1-.6-.1-1-.1-1.2zM9.5 13.6l-1.1 3.3-1-3.1 9.5-6-7.4 5.8z"/></svg>
+      انضم لقناة التيليجرام — عروض يومية وخصومات حصرية
+    </a>
+  </div>
+
+  <header>
+    <div class="brand">48<span>express</span> 🛒</div>
+    <p class="tagline">غادجيتس وأدوات ذكية بأسعار مباشرة من المصدر — كل منتج مختار ومجرّب</p>
+    <div class="count-pill" id="countPill">+40 منتج</div>
+  </header>
+
+  <div class="filters" id="filters"></div>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>
+    منتجات عبر AliExpress Affiliate — الأسعار والتوفر حسب المتجر.<br>
+    تابعنا على تيك توك وانستغرام: <strong>48express</strong> ·
+    <a href="https://t.me/+fS1aICLBv_4zMTQ8" target="_blank" rel="noopener">قناة التيليجرام</a>
+  </footer>
+
+<script>
+const products = [
+  {id:1, name:"أداة مطبخ ذكية تجمع 3 وظائف بقطعة واحدة", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c3kPZ4el"},
+  {id:2, name:"لوح التقطيع العجيب", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c4SL8MQP"},
+  {id:3, name:"محوّل البطاريات", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3yP4Rz1"},
+  {id:4, name:"فرشاة التنظيف المرنة", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c3G7ACfv"},
+  {id:5, name:"أداة نقل الأثاث", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c3I0hEZh"},
+  {id:6, name:"مشبك نشر قابل للطي", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c4P8p8Oj"},
+  {id:7, name:"ملعقة الرز الواقفة", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c3R0ywnH"},
+  {id:8, name:"كرة الطيران السحرية 2025! 🪁✨", cat:"ألعاب", link:"https://s.click.aliexpress.com/e/_c30JNr8L"},
+  {id:9, name:"أداة صغيرة بتنضّف العدسات من الجهتين", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3WZUb1d"},
+  {id:10, name:"باور بنك 5000mAh بلزق على الآيفون ويشحن بسرعة بدون أسلاك", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c366eyi3"},
+  {id:11, name:"مصباح المكتب الذكي - 3 في 1", cat:"إضاءة", link:"https://s.click.aliexpress.com/e/_c4c9Tipp"},
+  {id:12, name:"🎧 سماعة المخدة – نوم أهدى وموسيقى أرقى", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3MyUqPN"},
+  {id:13, name:"جهاز تفريغ المرحاض الذكي", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c3IAU85H"},
+  {id:14, name:"مروحة بتعرض الوقت والحرارة", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c4dzJuiX"},
+  {id:15, name:"Magcubic HY300 Pro بروجيكتور", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3cl67Ox"},
+  {id:16, name:"مقص أظافر احترافي كهربائي", cat:"عناية شخصية", link:"https://s.click.aliexpress.com/e/_c3Kd3FQF"},
+  {id:17, name:"بالونات ماجيك بول السحرية", cat:"ألعاب", link:"https://s.click.aliexpress.com/e/_c4qUhff9"},
+  {id:18, name:"للطوارئ جهاز الـ Rescue Device", cat:"سيارة", link:"https://s.click.aliexpress.com/e/_c4erWRFz"},
+  {id:19, name:"بروجيكتور الكواكب والنجوم", cat:"إضاءة", link:"https://s.click.aliexpress.com/e/_c4qgZFnd"},
+  {id:20, name:"لوحة الرسم المتوهجة", cat:"ألعاب", link:"https://s.click.aliexpress.com/e/_c4r0Tbbl"},
+  {id:21, name:"اضائة تفاعلية", cat:"إضاءة", link:"https://s.click.aliexpress.com/e/_c4dNv9JD"},
+  {id:22, name:"شاشة صغيرة AMOLED مغناطيسية لتصوير السيلفي", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3KmuVwJ"},
+  {id:23, name:"تحول أي جهاز قديم لشحن لاسلكي", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3hsuxDN"},
+  {id:24, name:"أغطية صغيرة تحمي خصوصيتك", cat:"إلكترونيات", link:"https://s.click.aliexpress.com/e/_c3F7wkN1"},
+  {id:25, name:"🚌 أتوبيس ذكي", cat:"ألعاب", link:"https://s.click.aliexpress.com/e/_c4Xek8BN"},
+  {id:26, name:"مسّاج Bionic N7 للرقبة والكتاف", cat:"عناية شخصية", link:"https://s.click.aliexpress.com/e/_c3Je3UT5"},
+  {id:27, name:"قالب الشيش برك", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c3N9vjvz"},
+  {id:28, name:"ملاقط حفظ الطعام", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c3gh6LKB"},
+  {id:29, name:"Mini Plug-in Electric Heater – دفاية صغيرة وقوية", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c3Yk4T2J"},
+  {id:30, name:"مصباح غاز خارجي كلاسيكي", cat:"إضاءة", link:"https://s.click.aliexpress.com/e/_c4be6xAR"},
+  {id:31, name:"أداة NexTool W2 المتعددة - 8 وظائف بقطعة", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c4l7sbH9"},
+  {id:32, name:"الهيت غان الصناعي 2000 واط", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c3pI1Cxz"},
+  {id:33, name:"سوكيت رنج العالمي من 7 لحد 19 ملم", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c38g9RRD"},
+  {id:34, name:"كاوي غاز احترافي", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c4LE7pFZ"},
+  {id:35, name:"مقصّ كهربائي لاسلكي", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c3kB2Auf"},
+  {id:36, name:"حامل ملاعق شكل سلطعون يمنع الفوضى", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c4VHdZ2f"},
+  {id:37, name:"منظّم أسلاك يخلّي مطبخك مرتب بثواني", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c3hCCd47"},
+  {id:38, name:"غطاء سيليكون مرن يحافظ على الأكل طازة", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c3N1RZhz"},
+  {id:40, name:"جهاز تفريغ هواء للبرطمانات", cat:"مطبخ", link:"https://s.click.aliexpress.com/e/_c3ws90sB"},
+  {id:41, name:"قاعدة استناد للقدم بالحمّام", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c36zY1pv"},
+  {id:42, name:"مسطرة DUKA الإلكترونية", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c3rDtgFN"},
+  {id:43, name:"صحن الأطفال الجيروسكوبي", cat:"أطفال", link:"https://s.click.aliexpress.com/e/_c3uwpA0x"},
+  {id:44, name:"رف لاصق بدون حفر", cat:"منزل", link:"https://s.click.aliexpress.com/e/_c3bkipbz"},
+  {id:45, name:"حامل استحمام البيبي", cat:"أطفال", link:"https://s.click.aliexpress.com/e/_c40TW5qb"},
+  {id:46, name:"مفك كهربائي احترافي 57 في 1", cat:"أدوات", link:"https://s.click.aliexpress.com/e/_c3KDspwF"},
+  {id:47, name:"USB CarPlay Android Auto", cat:"سيارة", link:"https://s.click.aliexpress.com/e/_c4OT8cIr"}
+];
+
+// ضع صور المنتجات داخل مجلد images/ بجانب هذا الملف
+// اسم كل صورة لازم يكون رقم المنتج: images/1.jpg , images/2.jpg ... إلخ
+// إذا الصورة غير موجودة، رح يظهر مكانها مربع رمادي بدل ما يتكسر الموقع
+function imgPath(id){ return `images/${id}.jpg`; }
+
+const grid = document.getElementById('grid');
+const filtersEl = document.getElementById('filters');
+const countPill = document.getElementById('countPill');
+
+const categories = ["الكل", ...Array.from(new Set(products.map(p => p.cat)))];
+let activeCat = "الكل";
+
+function renderFilters(){
+  filtersEl.innerHTML = "";
+  categories.forEach(cat => {
+    const chip = document.createElement('button');
+    chip.className = 'chip' + (cat === activeCat ? ' active' : '');
+    chip.textContent = cat;
+    chip.onclick = () => { activeCat = cat; renderFilters(); renderGrid(); };
+    filtersEl.appendChild(chip);
+  });
+}
+
+function renderGrid(){
+  const list = activeCat === "الكل" ? products : products.filter(p => p.cat === activeCat);
+  countPill.textContent = `+${list.length} منتج`;
+  grid.innerHTML = "";
+  if(list.length === 0){
+    grid.innerHTML = '<div class="empty-state">ما في منتجات بهاي الفئة</div>';
+    return;
+  }
+  list.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="thumb">
+        <span class="tag">${p.cat}</span>
+        <img src="${imgPath(p.id)}" alt="${p.name}" loading="lazy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="ph" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">📦<br>${p.name.slice(0,20)}</div>
+      </div>
+      <div class="info">
+        <h3>${p.name}</h3>
+        <a class="buy-btn" href="${p.link}" target="_blank" rel="noopener nofollow">اطلب الآن</a>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+renderFilters();
+renderGrid();
+</script>
+</body>
+</html>
