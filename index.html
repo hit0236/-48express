@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W59XNTHLQT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W59XNTHLQT');
+</script>
 <title>48express | أحدث الغادجيتس والعروض</title>
 <meta name="description" content="أفضل منتجات AliExpress المختارة بعناية — أدوات ذكية، غادجيتس، وحلول منزلية. اطلب مباشرة أو انضم لقناة التيليجرام لعروض يومية.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -268,7 +276,7 @@ function renderGrid(){
       </div>
       <div class="info">
         <h3>${p.name}</h3>
-        <a class="buy-btn" href="${p.link}" target="_blank" rel="noopener nofollow">اطلب الآن</a>
+        <a class="buy-btn" href="${p.link}" target="_blank" rel="noopener nofollow" onclick="if(window.gtag){gtag('event','product_click',{product_id:${p.id}, product_name:'${p.name.replace(/'/g,"")}', category:'${p.cat}'});}">اطلب الآن</a>
       </div>`;
     grid.appendChild(card);
   });
